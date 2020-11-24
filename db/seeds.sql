@@ -25,3 +25,8 @@ VALUES
     ('Barry', 'Lee', 1, NULL), ('Janice', 'Teller', 2, 1), ('John', 'McCruch', 3, NULL),
     ('Erin', 'Barker', 4, 3), ('Brad', 'March', 5, NULL), ('Patrice', 'Berg', 6, 5),
     ('David', 'Kraj', 7, NULL), ('Jake', 'Addams', 8, 7);
+
+
+SELECT * FROM department;
+SELECT * FROM role;
+SELECT * FROM employee;
