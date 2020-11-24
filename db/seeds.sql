@@ -30,3 +30,30 @@ VALUES
 SELECT * FROM department;
 SELECT * FROM role;
 SELECT * FROM employee;
+
+--- Queries
+
+-- Show all --  
+SELECT e.first_name, e.last_name, e.id AS employee_id, r.salary, r.role_title, d.department_name
+FROM employee e
+LEFT JOIN employee em ON e.manager_id = em.id
+INNER JOIN role r ON e.role_id = r.id
+INNER JOIN department d ON r.department_id = d.id
+ORDER BY e.id;
+
+-- Viewing by Employments Department-- 
+SELECT d.department_name, e.first_name, e.last_name, e.id AS employee_id, r.salary, r.role_title
+FROM employee e
+LEFT JOIN employee em ON e.manager_id = em.id
+INNER JOIN role r ON e.role_id = r.id
+INNER JOIN department d ON r.department_id = d.id
+ORDER BY d.department_name;
+
+
+SELECT d.department_name AS Department, r.role_title AS Postion, r.salary AS Salary
+FROM department d
+RIGHT JOIN role r ON r.department_id = d.id
+ORDER BY d.department_name;
+
+SELECT role_title, salary FROM role
+ORDER BY role_title; 
